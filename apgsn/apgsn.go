@@ -63,7 +63,7 @@ func (s *Service) GetIncidentsByCustomerID(customerID string) ([]Incident, error
 // CreateIncidentFlow creates Incident and WorkOrder for AP Deployment Issues
 func (s *Service) CreateIncidentFlow(incReq *CreateIncidentReq) (Incident, error) {
 	var incident Incident
-	data, err := json.Marshal(&incReq)
+	data, err := json.Marshal(incReq)
 	if err != nil {
 		return incident, err
 	}
