@@ -96,14 +96,14 @@ type CreateIncidentReq struct {
 	CreatedBy         string `json:"sys_created_by"`
 	AssignmentGroupID string `json:"assignment_group"`
 	AssignedTo        string `json:"assigned_to"`
-	Caller            string `json:"caller_id"`
+	Caller            string `json:"caller_id,omitempty"`
 	// Default: 6
 	Priority string `json:"priority"`
 	// Default: 5
 	Impact string `json:"impact"`
 	// Default: 3
 	Severity  string `json:"severity"`
-	WatchList string `json:"watch_list"`
+	WatchList string `json:"watch_list,omitempty"`
 }
 
 // WorkOrder ...
