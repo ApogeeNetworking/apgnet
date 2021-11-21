@@ -20,7 +20,7 @@ type Service struct {
 // NewService ...
 func NewService(host string, insecureSSL bool) *Service {
 	return &Service{
-		baseURL: fmt.Sprintf("http://%s/api", host),
+		baseURL: fmt.Sprintf("https://%s/api", host),
 		http: &http.Client{
 			Transport: &http.Transport{
 				TLSClientConfig: &tls.Config{
