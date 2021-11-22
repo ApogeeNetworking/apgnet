@@ -31,15 +31,15 @@ type CustomerName struct {
 // Incident ...
 type Incident struct {
 	ID        string `json:"sys_id"`
-	WatchList string `json:"watch_list"`
+	WatchList string `json:"watch_list,omitempty"`
 	Number    string `json:"number"`
 	// WorkOrder State => Indicate whether we can close the Ticket or Not
-	SubState string `json:"u_inc_substate"`
+	SubState string `json:"u_inc_substate,omitempty"`
 	// 2 = In Progress
 	// 3 = On Hold
 	// 6 = Resolved
 	// 7 = Closed
-	State string `json:"state"`
+	State string `json:"state,omitempty"`
 	// 6 = Project (default)
 	// 1 = COLO
 	// 2 = P0
@@ -53,27 +53,27 @@ type Incident struct {
 	// 4 = Low (default)
 	Urgency          string    `json:"urgency"`
 	SysCreatedBy     string    `json:"sys_created_by"`
-	WorkNotesList    string    `json:"work_notes_list"`
+	WorkNotesList    string    `json:"work_notes_list,omitempty"`
 	ShortDescription string    `json:"short_description"`
-	ClosedBy         RefFields `json:"closed_by"`
-	AssignedTo       RefFields `json:"assigned_to"`
+	ClosedBy         RefFields `json:"closed_by,omitempty"`
+	AssignedTo       RefFields `json:"assigned_to,omitempty"`
 	// WorkOrder Info
 	UWork           RefFields `json:"u_work"`
-	ResolvedBy      RefFields `json:"resolved_by"`
-	OpenedBy        RefFields `json:"opened_by"`
+	ResolvedBy      RefFields `json:"resolved_by,omitempty"`
+	OpenedBy        RefFields `json:"opened_by,omitempty"`
 	CallerID        RefFields `json:"caller_id"`
-	Subcategory     string    `json:"subcategory"`
-	WorkNotes       string    `json:"work_notes"`
+	Subcategory     string    `json:"subcategory,omitempty"`
+	WorkNotes       string    `json:"work_notes,omitempty"`
 	AssignmentGroup RefFields `json:"assignment_group"`
 	Description     string    `json:"description"`
-	CloseNotes      string    `json:"close_notes"`
-	IncidentState   string    `json:"incident_state"`
+	CloseNotes      string    `json:"close_notes,omitempty"`
+	IncidentState   string    `json:"incident_state,omitempty"`
 	Company         RefFields `json:"company"`
 	// ResNet
 	// Managed Campus
 	BusinessService RefFields `json:"business_service"`
 	Severity        string    `json:"severity"`
-	Location        string    `json:"location"`
+	Location        string    `json:"location,omitempty"`
 	Category        string    `json:"category"`
 }
 
@@ -95,15 +95,15 @@ type CreateIncidentReq struct {
 	// Email Address of Creator
 	CreatedBy         string `json:"sys_created_by"`
 	AssignmentGroupID string `json:"assignment_group"`
-	AssignedTo        string `json:"assigned_to"`
-	Caller            string `json:"caller_id,omitempty"`
+	AssignedTo        string `json:"assigned_to,omitempty"`
+	Caller            string `json:"caller_id"`
 	// Default: 6
 	Priority string `json:"priority"`
 	// Default: 5
 	Impact string `json:"impact"`
 	// Default: 3
 	Severity  string `json:"severity"`
-	WatchList string `json:"watch_list,omitempty"`
+	WatchList string `json:"watch_list"`
 }
 
 // WorkOrder ...
