@@ -1,7 +1,5 @@
 package apgsn
 
-import "time"
-
 // CustomerAccount ...
 type CustomerAccount struct {
 	ID         string  `json:"id"`
@@ -164,8 +162,8 @@ type UserGroup struct {
 	Description string    `json:"description"`
 	Type        string    `json:"type"`
 	HourlyRate  string    `json:"hourly_rate"`
-	UpdatedOn   time.Time `json:"sys_updated_on"`
-	CreatedOn   time.Time `json:"sys_created_on"`
+	UpdatedOn   string    `json:"sys_updated_on"`
+	CreatedOn   string    `json:"sys_created_on"`
 	Email       string    `json:"email"`
 }
 
