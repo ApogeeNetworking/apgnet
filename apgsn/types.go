@@ -1,5 +1,7 @@
 package apgsn
 
+import "time"
+
 // CustomerAccount ...
 type CustomerAccount struct {
 	ID         string  `json:"id"`
@@ -150,6 +152,28 @@ type User struct {
 	Email        string    `json:"email"`
 	Manager      RefFields `json:"manager"`
 	LastName     string    `json:"last_name"`
+}
+
+// UserGroup ...
+type UserGroup struct {
+	ID          string    `json:"sys_id"`
+	Name        string    `json:"name"`
+	Manager     RefFields `json:"manager"`
+	MemberCount string    `json:"sys_mod_count"`
+	Active      string    `json:"active"`
+	Description string    `json:"description"`
+	Type        string    `json:"type"`
+	HourlyRate  string    `json:"hourly_rate"`
+	UpdatedOn   time.Time `json:"sys_updated_on"`
+	CreatedOn   time.Time `json:"sys_created_on"`
+	Email       string    `json:"email"`
+}
+
+// GetIncidentsParams ...
+type GetIncidentsParams struct {
+	CustomerID        string
+	Email             string
+	AssignmentGroupID string
 }
 
 // https://apogeedev.service-now.com/customer_account_list.do?sysparm_query=customer%3Dtrue%5Eaccount_parentISEMPTY&sysparm_view=case
