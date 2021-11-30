@@ -182,7 +182,7 @@ type Circuit struct {
 	BsrApogeePort         string    `json:"u_bsr_apogee_port"`
 	CirSdi                string    `json:"u_cir_sdi"`
 	AcctNo                string    `json:"u_acct_no"`
-	CirProj               string    `json:"u_cir_proj"`
+	CirProj               RefFields `json:"u_cir_proj"`
 	SysUpdatedOn          string    `json:"sys_updated_on"`
 	AccountClient         RefFields `json:"u_account_client"`
 	CirComplete           string    `json:"u_cir_complete"`
