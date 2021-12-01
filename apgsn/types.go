@@ -182,7 +182,6 @@ type Circuit struct {
 	BsrApogeePort         string    `json:"u_bsr_apogee_port"`
 	CirSdi                string    `json:"u_cir_sdi"`
 	AcctNo                string    `json:"u_acct_no"`
-	CirProj               RefFields `json:"u_cir_proj"`
 	SysUpdatedOn          string    `json:"sys_updated_on"`
 	AccountClient         RefFields `json:"u_account_client"`
 	CirComplete           string    `json:"u_cir_complete"`
@@ -194,7 +193,7 @@ type Circuit struct {
 	CirCust               string    `json:"u_cir_cust"`
 	CirIspdate            string    `json:"u_cir_ispdate"`
 	SysCreatedBy          string    `json:"sys_created_by"`
-	Vendor                RefFields `json:"u_cir_dc_vendor"`
+	Vendor                string    `json:"u_cir_dc_vendor"`
 	CirXconnectPatchpan   string    `json:"u_cir_xconnect_patchpan"`
 	MsaRenew              string    `json:"u_msa_renew"`
 	Isp                   RefFields `json:"u_isp"`
@@ -230,19 +229,12 @@ type Circuit struct {
 	LecCid                string    `json:"u_lec_cid"`
 	ExecDate              string    `json:"u_exec_date"`
 	SysID                 string    `json:"sys_id"`
-	CirPrimepe            string    `json:"u_cir_primepe"`
 	GlideDuration1        string    `json:"u_glide_duration_1"`
 	ContractEnd           string    `json:"u_contract_end"`
 	IspHandoffA           string    `json:"u_isp_handoff_a"`
-	CircuitColo           RefFields `json:"u_circuit_colo"`
 	CircuitActive         string    `json:"u_circuit_active"`
 	Transport             string    `json:"u_transport"`
-	VenContact            string    `json:"u_ven_contact"`
-	CirDcTerm             string    `json:"u_cir_dc_term"`
-	CirNewcost            string    `json:"u_cir_newcost"`
-	CircuitCurrent        string    `json:"u_circuit_current"`
-	Lec                   string    `json:"u_lec"`
-	MtmLetter             string    `json:"u_mtm_letter"`
+	VendorContact         string    `json:"u_ven_contact"`
 	SigDate               string    `json:"u_sig_date"`
 	CirXconnectExp        string    `json:"u_cir_xconnect_exp"`
 	Number                string    `json:"u_number"`
@@ -253,7 +245,6 @@ type Circuit struct {
 	Journal1              string    `json:"u_journal_1"`
 	CirNslink             string    `json:"u_cir_nslink"`
 	CircuitSupport        string    `json:"u_circuit_support"`
-	CirApgPm              string    `json:"u_cir_apogeepm"`
 	SysModCount           string    `json:"sys_mod_count"`
 	CirPacksize           string    `json:"u_cir_packsize"`
 	Cid                   string    `json:"u_cid"`
