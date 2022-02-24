@@ -102,6 +102,7 @@ type CreateIncidentReq struct {
 	// Default: 5
 	Impact string `json:"impact"`
 	// Default: 3
+	Urgency   string `json:"urgency"`
 	Severity  string `json:"severity"`
 	WatchList string `json:"watch_list"`
 }
@@ -182,12 +183,13 @@ type Circuit struct {
 	BsrApogeePort         string    `json:"u_bsr_apogee_port"`
 	CirSdi                string    `json:"u_cir_sdi"`
 	AcctNo                string    `json:"u_acct_no"`
+	CirProj               RefFields `json:"u_cir_proj"`
 	SysUpdatedOn          string    `json:"sys_updated_on"`
 	AccountClient         RefFields `json:"u_account_client"`
 	CirComplete           string    `json:"u_cir_complete"`
 	CircuitNotes          string    `json:"u_circuit_notes"`
 	SysUpdatedBy          string    `json:"sys_updated_by"`
-	CirNni                string    `json:"u_cir_nni"`
+	CirNni                string    `json:"u_cir_nni,omitempty"`
 	SysCreatedOn          string    `json:"sys_created_on"`
 	CirSigdate            string    `json:"u_cir_sigdate"`
 	CirCust               string    `json:"u_cir_cust"`
@@ -196,7 +198,7 @@ type Circuit struct {
 	Vendor                string    `json:"u_cir_dc_vendor"`
 	CirXconnectPatchpan   string    `json:"u_cir_xconnect_patchpan"`
 	MsaRenew              string    `json:"u_msa_renew"`
-	Isp                   RefFields `json:"u_isp"`
+	Isp                   RefFields `json:"u_isp,omitempty"`
 	CirIspfoc             string    `json:"u_cir_ispfoc"`
 	CirProjtype           string    `json:"u_cir_projtype"`
 	State                 string    `json:"u_state"`
@@ -254,7 +256,7 @@ type Circuit struct {
 	CirNsprojnum          string    `json:"u_cir_nsprojnum"`
 	CurBedcount           string    `json:"u_cur_bedcount"`
 	BsrHandoff            string    `json:"u_bsr_handoff"`
-	CirBsr                string    `json:"u_cir_bsr"`
+	CirBsr                string    `json:"u_cir_bsr,omitempty"`
 	Bandwidth             string    `json:"u_bandwidth"`
 	Contacts              string    `json:"u_contacts"`
 	CustomerCircuitID     string    `json:"u_customer_circuit_id"`
