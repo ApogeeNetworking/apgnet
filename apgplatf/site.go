@@ -57,6 +57,28 @@ func (s *Service) GetSite(id string) (Site, error) {
 	return site, nil
 }
 
+// GetSiteByOrgName ...
+func (s *Service) GetSiteByOrgName(orgName string) (Site, error) {
+	var site Site
+	uri := fmt.Sprintf("/netplatform/site?sworg=%s", orgName)
+	req, err := s.http.GenerateRequest(uri, "GET", nil)
+	if err != nil {
+		return site, err
+	}
+	q := req.URL.Query()
+	q.Add("sworg", orgName)
+	req.URL.RawQuery = q.Encode()
+	res, err := s.http.MakeRequest(req)
+	if err != nil {
+		return site, err
+	}
+	defer res.Body.Close()
+	if err := json.NewDecoder(res.Body).Decode(&site); err != nil {
+		return site, err
+	}
+	return site, nil
+}
+
 // CreateSite ...
 func (s *Service) CreateSite(site Site) (Site, error) {
 	var newSite Site
