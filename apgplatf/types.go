@@ -47,6 +47,37 @@ type Site struct {
 			Freq string `bson:"freq" json:"freq"`
 		} `bson:"ssids" json:"ssids"`
 	} `bson:"netProperties" json:"netProperties"`
+	InfraDetails InfraStructure `bson:"infraDetails" json:"infraDetails"`
+}
+
+// InfraStructure
+type InfraStructure struct {
+	// CradlePoint Information
+	CPInfo      CradlePointInfo `bson:"cpInfo" json:"cpInfo"`
+	VpnRtrIP    string          `bson:"vpnRtrIp" json:"vpnRtrIp"`
+	CoreSwIP    string          `bson:"coreSwIp" json:"coreSwIp"`
+	CoreSwModel string          `bson:"coreSwModel" json:"coreSwModel"`
+	PduInfo     PDUDetails      `bson:"pduInfo" json:"pduInfo"`
+	TsConsole   []InfraPort     `bson:"tsConsole" json:"tsConsole"`
+}
+
+// CradlePointInfo
+type CradlePointInfo struct {
+	ID     string `bson:"id" json:"id"`
+	Name   string `bson:"name" json:"name"`
+	IPAddr string `bson:"ipAddr" json:"ipAddr"`
+}
+
+// PDUDetails
+type PDUDetails struct {
+	IPAddr  string      `bson:"ipAddr" json:"ipAddr"`
+	Outlets []InfraPort `bson:"outlets" json:"outlets"`
+}
+
+// InfraPort
+type InfraPort struct {
+	PortNum        string `bson:"portNum" json:"portNum"`
+	AttachedDevice string `bson:"attachedDevice" json:"attachedDevice"`
 }
 
 // Network ...
