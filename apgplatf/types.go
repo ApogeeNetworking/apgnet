@@ -66,6 +66,7 @@ type CradlePointInfo struct {
 	ID     string `bson:"id" json:"id"`
 	Name   string `bson:"name" json:"name"`
 	IPAddr string `bson:"ipAddr" json:"ipAddr"`
+	State  string `bson:"state" json:"state"`
 }
 
 // PDUDetails

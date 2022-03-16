@@ -141,3 +141,27 @@ func (s *Service) DeleteSite(id string) (int, error) {
 	defer res.Body.Close()
 	return res.StatusCode, nil
 }
+
+func (s *Service) GetCradlePoint(rtrID string) (CradlePointInfo, error) {
+	var (
+		rtrs  []CradlePointInfo
+		cpRtr CradlePointInfo
+	)
+	uri := fmt.Sprintf("/netplatform/cradlepoint/%s", rtrID)
+	req, err := s.http.GenerateRequest(uri, "GET", nil)
+	if err != nil {
+		return cpRtr, err
+	}
+	res, err := s.http.MakeRequest(req)
+	if err != nil {
+		return cpRtr, err
+	}
+	defer res.Body.Close()
+	if err := json.NewDecoder(res.Body).Decode(&rtrs); err != nil {
+		return cpRtr, err
+	}
+	if len(rtrs) == 0 {
+		cpRtr = rtrs[0]
+	}
+	return cpRtr, nil
+}
