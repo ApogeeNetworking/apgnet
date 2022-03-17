@@ -160,7 +160,7 @@ func (s *Service) GetCradlePoint(rtrID string) (CradlePointInfo, error) {
 	if err := json.NewDecoder(res.Body).Decode(&rtrs); err != nil {
 		return cpRtr, err
 	}
-	if len(rtrs) == 0 {
+	if len(rtrs) == 1 {
 		cpRtr = rtrs[0]
 	}
 	return cpRtr, nil
