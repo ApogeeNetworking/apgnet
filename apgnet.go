@@ -1,6 +1,7 @@
 package apgnet
 
 import (
+	"github.com/ApogeeNetworking/apgnet/apgers"
 	"github.com/ApogeeNetworking/apgnet/apgplatf"
 	"github.com/ApogeeNetworking/apgnet/apgreq"
 	"github.com/ApogeeNetworking/apgnet/apgsn"
@@ -11,6 +12,7 @@ type Service struct {
 	Platform *apgplatf.Service
 	Snow     *apgsn.Service
 	Thinobot *thinobot.Service
+	Ers      *apgers.Service
 }
 
 func NewService(host string, insecureSSL bool) *Service {
@@ -19,5 +21,6 @@ func NewService(host string, insecureSSL bool) *Service {
 		Platform: apgplatf.NewService(req),
 		Thinobot: thinobot.NewService("/thino", req),
 		Snow:     apgsn.NewService("/apgsn", req),
+		Ers:      apgers.NewService("/ers", req),
 	}
 }
