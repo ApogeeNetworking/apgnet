@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"strings"
 	"time"
 )
 
@@ -19,8 +20,13 @@ type Service struct {
 
 // NewService ...
 func NewService(host string, insecureSSL bool) *Service {
+	baseProto := "https"
+	if strings.Contains(host, "localhost") {
+		baseProto = "http"
+		insecureSSL = true
+	}
 	return &Service{
-		baseURL: fmt.Sprintf("https://%s/api", host),
+		baseURL: fmt.Sprintf("%s://%s/api", baseProto, host),
 		http: &http.Client{
 			Transport: &http.Transport{
 				TLSClientConfig: &tls.Config{
