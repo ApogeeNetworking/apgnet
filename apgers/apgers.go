@@ -20,7 +20,7 @@ func NewService(baseURL string, req *apgreq.Service) *Service {
 	}
 }
 
-type ErsAlert struct {
+type Alert struct {
 	Alert                string    `json:"alert"`
 	NodeID               int       `json:"nodeId"`
 	NodeName             string    `json:"nodeName"`
