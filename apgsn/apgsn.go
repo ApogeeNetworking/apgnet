@@ -84,6 +84,52 @@ func (s *Service) CreateIncidentFlow(incReq *CreateIncidentReq) (Incident, error
 	return incident, nil
 }
 
+// CreateIncident creates Incident and WorkOrder for AP Deployment Issues
+func (s *Service) CreateIncident(incReq *CreateIncidentReq) (Incident, error) {
+	var incident Incident
+	data, err := json.Marshal(incReq)
+	if err != nil {
+		return incident, err
+	}
+	sr := bytes.NewReader(data)
+	uri := fmt.Sprintf("%s/incidents", s.baseURL)
+	req, err := s.http.GenerateRequest(uri, "POST", sr)
+	if err != nil {
+		return incident, err
+	}
+	res, err := s.http.MakeRequest(req)
+	if err != nil {
+		return incident, err
+	}
+	defer res.Body.Close()
+	if err = json.NewDecoder(res.Body).Decode(&incident); err != nil {
+		return incident, err
+	}
+	return incident, nil
+}
+
+func (s *Service) CreateWorkOrder(incident *Incident) (*Incident, error) {
+	data, err := json.Marshal(incident)
+	if err != nil {
+		return incident, err
+	}
+	sr := bytes.NewReader(data)
+	uri := fmt.Sprintf("%s/workorders", s.baseURL)
+	req, err := s.http.GenerateRequest(uri, "POST", sr)
+	if err != nil {
+		return incident, err
+	}
+	res, err := s.http.MakeRequest(req)
+	if err != nil {
+		return incident, err
+	}
+	defer res.Body.Close()
+	if err = json.NewDecoder(res.Body).Decode(&incident); err != nil {
+		return incident, err
+	}
+	return incident, nil
+}
+
 // GetWorkOrderByID ...
 func (s *Service) GetWorkOrderByID(id string) (WorkOrder, error) {
 	var workOrder WorkOrder
