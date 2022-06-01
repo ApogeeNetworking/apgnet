@@ -58,20 +58,20 @@ type Incident struct {
 	// ClosedBy         RefFields `json:"closed_by,omitempty"`
 	// AssignedTo       RefFields `json:"assigned_to,omitempty"`
 	// WorkOrder Info
-	UWork Ref `json:"u_work"`
+	UWork Ref `json:"u_work,omitempty"`
 	// ResolvedBy      RefFields `json:"resolved_by,omitempty"`
 	// OpenedBy        RefFields `json:"opened_by,omitempty"`
-	CallerID        Ref    `json:"caller_id"`
+	CallerID        Ref    `json:"caller_id,omitempty"`
 	Subcategory     string `json:"subcategory,omitempty"`
 	WorkNotes       string `json:"work_notes,omitempty"`
-	AssignmentGroup Ref    `json:"assignment_group"`
+	AssignmentGroup Ref    `json:"assignment_group,omitempty"`
 	Description     string `json:"description"`
 	CloseNotes      string `json:"close_notes,omitempty"`
 	IncidentState   string `json:"incident_state,omitempty"`
-	Company         Ref    `json:"company"`
+	Company         Ref    `json:"company,omitempty"`
 	// ResNet
 	// Managed Campus
-	BusinessService Ref    `json:"business_service"`
+	BusinessService Ref    `json:"business_service,omitempty"`
 	Severity        string `json:"severity"`
 	Location        string `json:"location,omitempty"`
 	Category        string `json:"category"`
