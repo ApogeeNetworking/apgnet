@@ -105,6 +105,7 @@ type CreateIncidentReq struct {
 	Urgency   string `json:"urgency"`
 	Severity  string `json:"severity"`
 	WatchList string `json:"watch_list"`
+	WorkNotes string `json:"work_notes"`
 }
 
 // WorkOrder ...
