@@ -58,24 +58,27 @@ type Incident struct {
 	// ClosedBy         RefFields `json:"closed_by,omitempty"`
 	// AssignedTo       RefFields `json:"assigned_to,omitempty"`
 	// WorkOrder Info
-	UWork RefFields `json:"u_work"`
+	UWork Ref `json:"u_work"`
 	// ResolvedBy      RefFields `json:"resolved_by,omitempty"`
 	// OpenedBy        RefFields `json:"opened_by,omitempty"`
-	CallerID        RefFields `json:"caller_id"`
-	Subcategory     string    `json:"subcategory,omitempty"`
-	WorkNotes       string    `json:"work_notes,omitempty"`
-	AssignmentGroup RefFields `json:"assignment_group"`
-	Description     string    `json:"description"`
-	CloseNotes      string    `json:"close_notes,omitempty"`
-	IncidentState   string    `json:"incident_state,omitempty"`
-	Company         RefFields `json:"company"`
+	CallerID        Ref    `json:"caller_id"`
+	Subcategory     string `json:"subcategory,omitempty"`
+	WorkNotes       string `json:"work_notes,omitempty"`
+	AssignmentGroup Ref    `json:"assignment_group"`
+	Description     string `json:"description"`
+	CloseNotes      string `json:"close_notes,omitempty"`
+	IncidentState   string `json:"incident_state,omitempty"`
+	Company         Ref    `json:"company"`
 	// ResNet
 	// Managed Campus
-	BusinessService RefFields `json:"business_service"`
-	Severity        string    `json:"severity"`
-	Location        string    `json:"location,omitempty"`
-	Category        string    `json:"category"`
+	BusinessService Ref    `json:"business_service"`
+	Severity        string `json:"severity"`
+	Location        string `json:"location,omitempty"`
+	Category        string `json:"category"`
 }
+
+// Ref ...
+type Ref map[string]string
 
 // RefFields ...
 type RefFields struct {
