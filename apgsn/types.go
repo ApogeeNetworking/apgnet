@@ -58,7 +58,7 @@ type Incident struct {
 	// ClosedBy         RefFields `json:"closed_by,omitempty"`
 	// AssignedTo       RefFields `json:"assigned_to,omitempty"`
 	// WorkOrder Info
-	// UWork           RefFields `json:"u_work"`
+	UWork RefFields `json:"u_work"`
 	// ResolvedBy      RefFields `json:"resolved_by,omitempty"`
 	// OpenedBy        RefFields `json:"opened_by,omitempty"`
 	CallerID        RefFields `json:"caller_id"`
