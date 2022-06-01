@@ -51,27 +51,30 @@ type Incident struct {
 	// 2 = High
 	// 3 = Medium
 	// 4 = Low (default)
-	Urgency          string    `json:"urgency"`
-	SysCreatedBy     string    `json:"sys_created_by"`
-	WorkNotesList    string    `json:"work_notes_list,omitempty"`
-	ShortDescription string    `json:"short_description"`
-	AssignedTo       RefFields `json:"assigned_to,omitempty"`
+	Urgency          string `json:"urgency"`
+	SysCreatedBy     string `json:"sys_created_by"`
+	WorkNotesList    string `json:"work_notes_list,omitempty"`
+	ShortDescription string `json:"short_description"`
+	// ClosedBy         RefFields `json:"closed_by,omitempty"`
+	// AssignedTo       RefFields `json:"assigned_to,omitempty"`
 	// WorkOrder Info
-	UWork           RefFields `json:"u_work"`
-	OpenedBy        RefFields `json:"opened_by,omitempty"`
-	CallerID        RefFields `json:"caller_id"`
-	Subcategory     string    `json:"subcategory,omitempty"`
-	WorkNotes       string    `json:"work_notes,omitempty"`
-	AssignmentGroup RefFields `json:"assignment_group"`
-	Description     string    `json:"description"`
-	IncidentState   string    `json:"incident_state,omitempty"`
-	Company         RefFields `json:"company"`
+	// UWork           RefFields `json:"u_work"`
+	// ResolvedBy      RefFields `json:"resolved_by,omitempty"`
+	// OpenedBy        RefFields `json:"opened_by,omitempty"`
+	CallerID    RefFields `json:"caller_id"`
+	Subcategory string    `json:"subcategory,omitempty"`
+	WorkNotes   string    `json:"work_notes,omitempty"`
+	// AssignmentGroup RefFields `json:"assignment_group"`
+	Description   string `json:"description"`
+	CloseNotes    string `json:"close_notes,omitempty"`
+	IncidentState string `json:"incident_state,omitempty"`
+	// Company         RefFields `json:"company"`
 	// ResNet
 	// Managed Campus
-	BusinessService RefFields `json:"business_service"`
-	Severity        string    `json:"severity"`
-	Location        string    `json:"location,omitempty"`
-	Category        string    `json:"category"`
+	// BusinessService RefFields `json:"business_service"`
+	Severity string `json:"severity"`
+	Location string `json:"location,omitempty"`
+	Category string `json:"category"`
 }
 
 // RefFields ...
