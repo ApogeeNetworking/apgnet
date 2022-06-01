@@ -55,18 +55,15 @@ type Incident struct {
 	SysCreatedBy     string    `json:"sys_created_by"`
 	WorkNotesList    string    `json:"work_notes_list,omitempty"`
 	ShortDescription string    `json:"short_description"`
-	ClosedBy         RefFields `json:"closed_by,omitempty"`
 	AssignedTo       RefFields `json:"assigned_to,omitempty"`
 	// WorkOrder Info
 	UWork           RefFields `json:"u_work"`
-	ResolvedBy      RefFields `json:"resolved_by,omitempty"`
 	OpenedBy        RefFields `json:"opened_by,omitempty"`
 	CallerID        RefFields `json:"caller_id"`
 	Subcategory     string    `json:"subcategory,omitempty"`
 	WorkNotes       string    `json:"work_notes,omitempty"`
 	AssignmentGroup RefFields `json:"assignment_group"`
 	Description     string    `json:"description"`
-	CloseNotes      string    `json:"close_notes,omitempty"`
 	IncidentState   string    `json:"incident_state,omitempty"`
 	Company         RefFields `json:"company"`
 	// ResNet
