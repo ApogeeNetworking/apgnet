@@ -4,6 +4,7 @@ import (
 	"log"
 	"time"
 
+	"github.com/ApogeeNetworking/apgnet/apgplatf"
 	"google.golang.org/api/drive/v3"
 	"google.golang.org/api/sheets/v4"
 
@@ -35,26 +36,29 @@ type Bot struct {
 
 // AccessPoint ...
 type AccessPoint struct {
-	Name         string `json:"name"`
-	MacAddr      string `json:"macAddr"`
-	Serial       string `json:"serialNumber"`
-	Model        string `json:"model"`
-	Status       string `json:"status"`
-	Group        string `json:"group"`
-	WlcIP        string `json:"controllerIp"`
-	ServiceTag   string `json:"serviceTag"`
-	Staged       bool   `json:"staged"`
-	Row          int    `json:"row"`
-	Installed    bool   `json:"installed"`
-	GoodPoll     int64  `json:"goodPoll"`
-	Vendor       string `json:"vendor"`
-	RfProfile    string `json:"rfTag"`
-	SiteProfile  string `json:"siteTag"`
-	RemoteSwitch string `json:"remoteSwitch"`
-	RemoteIntf   string `json:"remoteIntf"`
-	FactoryReset bool   `json:"factoryReset"`
-	VlanID       int    `json:"vlanId"`
-	Notes        string `json:"notes"`
+	Name         string            `json:"name"`
+	MacAddr      string            `json:"macAddr"`
+	Serial       string            `json:"serialNumber"`
+	Model        string            `json:"model"`
+	Status       string            `json:"status"`
+	Group        string            `json:"group"`
+	WlcIP        string            `json:"controllerIp"`
+	ServiceTag   string            `json:"serviceTag"`
+	Staged       bool              `json:"staged"`
+	Row          int               `json:"row"`
+	Installed    bool              `json:"installed"`
+	GoodPoll     int64             `json:"goodPoll"`
+	Vendor       string            `json:"vendor"`
+	RfProfile    string            `json:"rfTag"`
+	SiteProfile  string            `json:"siteTag"`
+	RemoteSwitch string            `json:"remoteSwitch"`
+	RemoteIntf   string            `json:"remoteIntf"`
+	FactoryReset bool              `json:"factoryReset"`
+	VlanID       int               `json:"vlanId"`
+	Notes        string            `json:"notes"`
+	Building     string            `json:"bldg"`
+	Room         string            `json:"room"`
+	Location     apgplatf.Location `json:"location"`
 }
 
 // RouterParams ...
