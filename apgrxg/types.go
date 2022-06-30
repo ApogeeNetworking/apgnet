@@ -10,14 +10,15 @@ import (
 
 // OssSite ...
 type RxG struct {
-	ID        primitive.ObjectID `json:"id" bson:"_id,omitempty"`
-	SiteID    primitive.ObjectID `bson:"siteId" json:"siteId"`
-	DbName    string             `json:"dbName" bson:"dbName"`
-	Host      string             `json:"dbHost" bson:"dbHost"`
-	User      string             `json:"dbUser" bson:"dbUser"`
-	Password  string             `json:"dbPassword" bson:"dbPassword"`
-	APIKey    string             `json:"apiKey" bson:"apiKey"`
-	CreatedAt time.Time          `json:"createdAt" bson:"createdAt"`
+	ID           primitive.ObjectID `json:"id" bson:"_id,omitempty"`
+	SiteID       primitive.ObjectID `bson:"siteId" json:"siteId"`
+	DbName       string             `json:"dbName" bson:"dbName"`
+	Host         string             `json:"dbHost" bson:"dbHost"`
+	User         string             `json:"dbUser" bson:"dbUser"`
+	Password     string             `json:"dbPassword" bson:"dbPassword"`
+	APIKey       string             `json:"apiKey" bson:"apiKey"`
+	BuildVersion string             `json:"buildVersion"`
+	CreatedAt    time.Time          `json:"createdAt" bson:"createdAt"`
 }
 
 // ExporterSite ...
